@@ -64,18 +64,6 @@
         </pluginManagement>
     </build>
 
-    <profiles>
-        <profile>
-            <id>build-maven</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <build>
-            </build>
-        </profile>
-    </profiles>
-
-
     <dependencies>
         <dependency>
             <groupId>org.apache.struts</groupId>
