@@ -55,7 +55,7 @@
 
     <properties>
         <currentVersion>${project.version}</currentVersion>
-        <java.version>7</java.version>
+        <java.version>8</java.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
