@@ -19,5 +19,6 @@
  */
 -->
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
+<#assign formControlClass = "form-select"/>
 <#include "/${parameters.templateDir}/simple/select.ftl" />
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" />
