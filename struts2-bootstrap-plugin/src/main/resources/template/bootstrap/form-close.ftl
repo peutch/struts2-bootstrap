@@ -18,8 +18,8 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/control-close.ftl" />
-<#include "/${parameters.templateDir}/simple/form-close.ftl" />
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/control-close.ftl" />
+<#include "/${attributes.templateDir}/simple/form-close.ftl" />
 <@s.script type="text/javascript">
     if (typeof jQuery != 'undefined') {
         if (typeof jQuery.fn.tooltip == 'function') {

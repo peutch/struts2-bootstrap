@@ -19,7 +19,7 @@
  */
 -->
 <#assign struts2BootstrapVersion="${version}"><#rt/>
-<#if parameters.compressed!true>
+<#if attributes.compressed!true>
     <#assign jsFile="bootstrap.bundle.min.js"><#rt/>
     <#assign cssFile="bootstrap.min.css"><#rt/>
     <#assign cssIconsFile="bootstrap-icons.css"><#rt/>
@@ -30,15 +30,15 @@
     <#assign cssIconsFile="bootstrap-icons.css"><#rt/>
     <#assign validationFile="validation.js"><#rt/>
 </#if>
-<#if parameters.includeScripts!true>
-<@s.script src="${base}${parameters.staticContentPath}/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
+<#if attributes.includeScripts!true>
+<@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
-<#if parameters.includeScriptsValidation!true>
-<@s.script src="${base}${parameters.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
+<#if attributes.includeScriptsValidation!true>
+<@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
-<#if parameters.includeStyles!true>
+<#if attributes.includeStyles!true>
 <@s.link id="bootstrap_styles" rel="stylesheet"
-    href="${base}${parameters.staticContentPath}/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+    href="${base}${attributes.staticContentPath}/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 <@s.link id="bootstrap_styles_icons" rel="stylesheet"
-    href="${base}${parameters.staticContentPath}/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+    href="${base}${attributes.staticContentPath}/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 </#if>

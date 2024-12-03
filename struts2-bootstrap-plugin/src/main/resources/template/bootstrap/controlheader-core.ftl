@@ -23,21 +23,21 @@
 	This will be done if ActionSupport is used.
 -->
 
-<#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors.get(parameters.name?j_string)??/>
+<#assign hasFieldErrors = attributes.name?? && fieldErrors?? && fieldErrors.get(attributes.name?j_string)??/>
 <#assign formControlClass = "form-control"/>
 
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["labelCssClass"]??)><#rt/>
-    <#assign labelCssClass = parameters.dynamicAttributes.remove("labelCssClass")/><#rt/>
+<#if (attributes.dynamicAttributes?? && attributes.dynamicAttributes?size > 0 && attributes.dynamicAttributes["labelCssClass"]??)><#rt/>
+    <#assign labelCssClass = attributes.dynamicAttributes.remove("labelCssClass")/><#rt/>
 <#else>
     <#assign labelCssClass ><@s.property value="#s2b_form_label_class" /></#assign><#rt/>
 </#if><#rt/>
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["elementCssClass"]??)><#rt/>
-    <#assign elementCssClass = parameters.dynamicAttributes.remove("elementCssClass")/><#rt/>
+<#if (attributes.dynamicAttributes?? && attributes.dynamicAttributes?size > 0 && attributes.dynamicAttributes["elementCssClass"]??)><#rt/>
+    <#assign elementCssClass = attributes.dynamicAttributes.remove("elementCssClass")/><#rt/>
 <#else>
     <#assign elementCssClass ><@s.property value="#s2b_form_element_class" /></#assign><#rt/>
 </#if><#rt/>
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formGroupCssClass"]??)><#rt/>
-    <#assign formGroupCssClass = parameters.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
+<#if (attributes.dynamicAttributes?? && attributes.dynamicAttributes?size > 0 && attributes.dynamicAttributes["formGroupCssClass"]??)><#rt/>
+    <#assign formGroupCssClass = attributes.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
 <#else>
     <@s.if test="#s2b_form_class == 'form-horizontal'">
         <#assign formGroupCssClass >mb-3 row</#assign><#rt/>
@@ -46,8 +46,8 @@
         <#assign formGroupCssClass ></#assign><#rt/>
     </@s.else><#rt/>
 </#if><#rt/>
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formLabelCssClass"]??)><#rt/>
-    <#assign formLabelCssClass = parameters.dynamicAttributes.remove("formLabelCssClass")/><#rt/>
+<#if (attributes.dynamicAttributes?? && attributes.dynamicAttributes?size > 0 && attributes.dynamicAttributes["formLabelCssClass"]??)><#rt/>
+    <#assign formLabelCssClass = attributes.dynamicAttributes.remove("formLabelCssClass")/><#rt/>
 <#else>
     <@s.if test="#s2b_form_class == 'form-horizontal'">
         <#assign formLabelCssClass >col-form-label</#assign><#rt/>
@@ -63,29 +63,29 @@
  is-invalid <#rt/>
 </#if>
 "><#rt/>
-<#if parameters.label??>
+<#if attributes.label??>
     <label class="${formLabelCssClass} ${labelCssClass}" <#t/>
-        <#if parameters.id??>
-           for="${parameters.id}" <#rt/>
+        <#if attributes.id??>
+           for="${attributes.id}" <#rt/>
         </#if>
             ><#rt/>
-        <#if (parameters.required!false) && ((parameters.requiredPosition!"right") != 'right')>
+        <#if (attributes.required!false) && ((attributes.requiredPosition!"right") != 'right')>
             <span class="required">*</span>
         </#if>
-    ${parameters.label}<#t/>
-        <#if (parameters.required!false) && ((parameters.requiredPosition!"right") == 'right')>
+    ${attributes.label}<#t/>
+        <#if (attributes.required!false) && ((attributes.requiredPosition!"right") == 'right')>
             <span class="required">*</span>
         </#if>
-    ${parameters.labelseparator!""}
-        <#include "/${parameters.templateDir}/${parameters.expandTheme}/tooltip.ftl" />
+    ${attributes.labelseparator!""}
+        <#include "/${attributes.templateDir}/${attributes.expandTheme}/tooltip.ftl" />
     </label><#rt/>
 <#else>
     <div class="${formLabelCssClass} ${labelCssClass}"></div>
 </#if>
 <#lt/>
     <div class="${elementCssClass}">
-    <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
-        <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
+    <#if (attributes.dynamicAttributes?? && attributes.dynamicAttributes?size > 0 && attributes.dynamicAttributes["helpText"]??)><#rt/>
+        <#assign helpText = attributes.dynamicAttributes.remove("helpText")/><#rt/>
     </#if><#rt/>
 </@s.if>
 <@s.else>

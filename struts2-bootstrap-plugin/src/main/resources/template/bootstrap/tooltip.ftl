@@ -18,6 +18,6 @@
  * under the License.
  */
 -->
-<#if parameters.tooltip??>
- <i class="bi bi-info-circle s2b_tooltip" data-toggle="tooltip" title="${parameters.tooltip}"></i>
+<#if attributes.tooltip??>
+ <i class="bi bi-info-circle s2b_tooltip" data-toggle="tooltip" title="${attributes.tooltip}"></i>
 </#if><#t/>

@@ -18,23 +18,23 @@
  * under the License.
  */
 -->
-<#if (actionErrors?? && actionErrors?size > 0 && !parameters.isEmptyList)>
+<#if (actionErrors?? && actionErrors?size > 0 && !attributes.isEmptyList)>
 <div
-    <#if parameters.id?has_content>
-            id="${parameters.id}"<#rt/>
+    <#if attributes.id?has_content>
+            id="${attributes.id}"<#rt/>
     </#if>
-    <#if parameters.cssClass??>
-            class="alert alert-danger ${parameters.cssClass}"<#rt/>
+    <#if attributes.cssClass??>
+            class="alert alert-danger ${attributes.cssClass}"<#rt/>
     <#else>
             class="alert alert-danger"<#rt/>
     </#if>
-    <#if parameters.cssStyle??>
-            style="${parameters.cssStyle}"<#rt/>
+    <#if attributes.cssStyle??>
+            style="${attributes.cssStyle}"<#rt/>
     </#if>
     role="alert">
     <#list actionErrors as message>
         <#if message?has_content>
-            <div class="mb-0"><#if parameters.escape>${message!}<#else>${message!}</#if></div>
+            <div class="mb-0"><#if attributes.escape>${message!}<#else>${message!}</#if></div>
         </#if>
     </#list>
 </div>

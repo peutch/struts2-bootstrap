@@ -19,54 +19,54 @@
  */
 -->
 <#assign itemCount = 0/>
-<@s.iterator value="parameters.list">
+<@s.iterator value="attributes.list">
     <#assign itemCount = itemCount + 1/>
-    <#if parameters.listKey??>
-        <#assign itemKey = stack.findValue(parameters.listKey)/>
+    <#if attributes.listKey??>
+        <#assign itemKey = stack.findValue(attributes.listKey)/>
     <#else>
         <#assign itemKey = stack.findValue('top')/>
     </#if>
     <#assign itemKeyStr = itemKey.toString() />
-    <#if parameters.listValue??>
-        <#assign itemValue = stack.findString(parameters.listValue)/>
+    <#if attributes.listValue??>
+        <#assign itemValue = stack.findString(attributes.listValue)/>
     <#else>
         <#assign itemValue = stack.findString('top')/>
     </#if>
-    <#if parameters.labelPosition?default("") == 'left'>
+    <#if attributes.labelPosition?default("") == 'left'>
         <#assign inlineAttr="form-check-inline"/><#lt/>
     </#if>
-    <#if parameters.disabled!false>
+    <#if attributes.disabled!false>
         <#assign disabledAttr="disabled"/><#lt/>
     </#if>
 <div class="form-check ${inlineAttr!""} ${disabledAttr!""}"><#lt/>
         <input type="radio" class="form-check-input" <#t/>
-            <#if parameters.name??>
-               name="${parameters.name}" <#t/>
+            <#if attributes.name??>
+               name="${attributes.name}" <#t/>
             </#if>
-               id="${parameters.name}-${itemCount}" <#t/>
-            <#if tag.contains(parameters.nameValue!'', itemKeyStr)>
+               id="${attributes.name}-${itemCount}" <#t/>
+            <#if tag.contains(attributes.nameValue!'', itemKeyStr)>
                checked="checked" <#t/>
             </#if>
             <#if itemKey??>
                value="${itemKeyStr}" <#t/>
             </#if>
-            <#if parameters.disabled!false>
+            <#if attributes.disabled!false>
                disabled="disabled" <#t/>
             </#if>
-            <#if parameters.tabindex??>
-               tabindex="${parameters.tabindex}" <#t/>
+            <#if attributes.tabindex??>
+               tabindex="${attributes.tabindex}" <#t/>
             </#if>
-            <#if parameters.cssStyle??>
-               style="${parameters.cssStyle}" <#t/>
+            <#if attributes.cssStyle??>
+               style="${attributes.cssStyle}" <#t/>
             </#if>
-            <#include "/${parameters.templateDir}/simple/css.ftl" /> <#t/>
-            <#if parameters.title??>
-               title="${parameters.title}" <#t/>
+            <#include "/${attributes.templateDir}/simple/css.ftl" /> <#t/>
+            <#if attributes.title??>
+               title="${attributes.title}" <#t/>
             </#if>
-            <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-            <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
+            <#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+            <#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
         /><#lt/>
-    <label for="${parameters.name}-${itemCount}" class="form-check-label">
+    <label for="${attributes.name}-${itemCount}" class="form-check-label">
         ${itemValue}
     </label>
 </div><#lt/>

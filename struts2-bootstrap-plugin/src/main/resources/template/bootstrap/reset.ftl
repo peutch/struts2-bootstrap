@@ -18,4 +18,4 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/simple/reset.ftl" />
+<#include "/${attributes.templateDir}/simple/reset.ftl" />

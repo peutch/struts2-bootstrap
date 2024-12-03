@@ -20,8 +20,8 @@
 -->
 <@s.if test="#s2b_form_element_class != 'form-inline'">
 <fieldset>
-<#if parameters.label??>
-    <legend>${parameters.label!""}</legend>
+<#if attributes.label??>
+    <legend>${attributes.label!""}</legend>
 </#if>
 </@s.if>
 <@s.else>
