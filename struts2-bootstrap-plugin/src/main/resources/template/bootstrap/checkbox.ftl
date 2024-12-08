@@ -18,9 +18,9 @@
  * under the License.
  */
 -->
-<#assign hasFieldErrors = fieldErrors?? && fieldErrors.get(parameters.name?j_string)??/>
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formGroupCssClass"]??)><#rt/>
-    <#assign formGroupCssClass = parameters.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
+<#assign hasFieldErrors = fieldErrors?? && fieldErrors.get(attributes.name?j_string)??/>
+<#if (attributes.dynamicAttributes?? && attributes.dynamicAttributes?size > 0 && attributes.dynamicAttributes["formGroupCssClass"]??)><#rt/>
+    <#assign formGroupCssClass = attributes.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
 <#else>
     <@s.if test="#s2b_form_class == 'form-horizontal'">
         <#assign formGroupCssClass >mb-3 row</#assign><#rt/>
@@ -33,38 +33,38 @@
     <#if hasFieldErrors>
         is-invalid invalid-feedback <#t/>
     </#if>
-    ${parameters.cssClass!''}" <#t/>
-    <#if parameters.cssStyle??>
-        style="${parameters.cssStyle}" <#t/>
+    ${attributes.cssClass!''}" <#t/>
+    <#if attributes.cssStyle??>
+        style="${attributes.cssStyle}" <#t/>
     </#if>
 >
     <div class="<@s.property value="#s2b_form_label_class" />"></div>
     <div class="<@s.property value="#s2b_form_element_class" /> controls">
     <#lt/>
-    <#if (parameters.labelPosition!"") == 'left'>
+    <#if (attributes.labelPosition!"") == 'left'>
     <div class="form-check-inline">
     <#else>
     <div class="form-check">
     </#if>
-    <#if parameters.label??>
-         <#include "/${parameters.templateDir}/${parameters.expandTheme}/simple/checkbox.ftl" />
+    <#if attributes.label??>
+         <#include "/${attributes.templateDir}/${attributes.expandTheme}/simple/checkbox.ftl" />
         <label <#rt/>
-                <#if parameters.id??>
-                    for="${parameters.id}" <#t/>
+                <#if attributes.id??>
+                    for="${attributes.id}" <#t/>
                 </#if>
                 class="form-check-label"><#lt/>
-            <#if (parameters.required!false) && ((parameters.requiredPosition!"right") != 'right')>
+            <#if (attributes.required!false) && ((attributes.requiredPosition!"right") != 'right')>
                 <span class="required">*</span><#rt/>
             </#if>
-        ${parameters.label}<#t/>
-        <#if (parameters.required!false) && ((parameters.requiredPosition!"right") == 'right')>
+        ${attributes.label}<#t/>
+        <#if (attributes.required!false) && ((attributes.requiredPosition!"right") == 'right')>
             <span class="required">*</span><#t/>
         </#if>
-        ${parameters.labelseparator!""}<#t/>
-        <#include "/${parameters.templateDir}/${parameters.expandTheme}/tooltip.ftl" />
+        ${attributes.labelseparator!""}<#t/>
+        <#include "/${attributes.templateDir}/${attributes.expandTheme}/tooltip.ftl" />
     </#if>
-    <#if parameters.label??>
+    <#if attributes.label??>
     </label>
     </div><#t/>
     </#if>
-    <#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" /><#nt/>
+    <#include "/${attributes.templateDir}/${attributes.expandTheme}/controlfooter.ftl" /><#nt/>

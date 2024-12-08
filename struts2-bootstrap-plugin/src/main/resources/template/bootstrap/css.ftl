@@ -18,20 +18,20 @@
  * under the License.
  */
 -->
-<#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors.get(parameters.name?j_string)??/>
-<#if parameters.cssClass?? && !(hasFieldErrors && parameters.cssErrorClass??)>
- class="${formControlClass} ${parameters.cssClass}"<#rt/>
-<#elseif parameters.cssClass?? && (hasFieldErrors && parameters.cssErrorClass??)>
- class="${formControlClass} ${parameters.cssClass} is-invalid ${parameters.cssErrorClass}"<#rt/>
-<#elseif !(parameters.cssClass??) && (hasFieldErrors && parameters.cssErrorClass??)>
- class="${formControlClass} is-invalid ${parameters.cssErrorClass}"<#rt/>
-<#elseif !(parameters.cssClass??) && hasFieldErrors>
+<#assign hasFieldErrors = attributes.name?? && fieldErrors?? && fieldErrors.get(attributes.name?j_string)??/>
+<#if attributes.cssClass?? && !(hasFieldErrors && attributes.cssErrorClass??)>
+ class="${formControlClass} ${attributes.cssClass}"<#rt/>
+<#elseif attributes.cssClass?? && (hasFieldErrors && attributes.cssErrorClass??)>
+ class="${formControlClass} ${attributes.cssClass} is-invalid ${attributes.cssErrorClass}"<#rt/>
+<#elseif !(attributes.cssClass??) && (hasFieldErrors && attributes.cssErrorClass??)>
+ class="${formControlClass} is-invalid ${attributes.cssErrorClass}"<#rt/>
+<#elseif !(attributes.cssClass??) && hasFieldErrors>
  class="${formControlClass} is-invalid"<#rt/>
 <#else>
  class="${formControlClass}"<#rt/>
 </#if>
-<#if parameters.cssStyle?? && !(hasFieldErrors && (parameters.cssErrorStyle?? || parameters.cssErrorClass??))>
- style="${parameters.cssStyle}"<#rt/>
-<#elseif hasFieldErrors && parameters.cssErrorStyle??>
- style="${parameters.cssErrorStyle}"<#rt/>
+<#if attributes.cssStyle?? && !(hasFieldErrors && (attributes.cssErrorStyle?? || attributes.cssErrorClass??))>
+ style="${attributes.cssStyle}"<#rt/>
+<#elseif hasFieldErrors && attributes.cssErrorStyle??>
+ style="${attributes.cssErrorStyle}"<#rt/>
 </#if>

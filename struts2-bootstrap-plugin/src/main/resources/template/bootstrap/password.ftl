@@ -18,8 +18,8 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/append.ftl" />
-<#include "/${parameters.templateDir}/simple/password.ftl" />
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/prepend.ftl" />
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" />
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/controlheader.ftl" />
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/append.ftl" />
+<#include "/${attributes.templateDir}/simple/password.ftl" />
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/prepend.ftl" />
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/controlfooter.ftl" />

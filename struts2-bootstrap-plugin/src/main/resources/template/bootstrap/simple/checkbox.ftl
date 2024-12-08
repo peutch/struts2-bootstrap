@@ -20,33 +20,33 @@
  * under the License.
  */
 -->
-<input type="checkbox" name="${parameters.name}" value="${parameters.fieldValue}" class="form-check-input" <#rt/>
-    <#if parameters.nameValue?? && parameters.nameValue>
+<input type="checkbox" name="${attributes.name}" value="${attributes.fieldValue}" class="form-check-input" <#rt/>
+    <#if attributes.nameValue?? && attributes.nameValue>
         checked="checked" <#t/>
     </#if>
-    <#if parameters.disabled!false>
+    <#if attributes.disabled!false>
         disabled="disabled" <#t/>
     </#if>
-    <#if parameters.readonly!false>
+    <#if attributes.readonly!false>
         readonly="readonly" <#t/>
     </#if>
-    <#if parameters.tabindex??>
-        tabindex="${parameters.tabindex}" <#t/>
+    <#if attributes.tabindex??>
+        tabindex="${attributes.tabindex}" <#t/>
     </#if>
-    <#if parameters.id??>
-        id="${parameters.id}" <#t/>
+    <#if attributes.id??>
+        id="${attributes.id}" <#t/>
     </#if>
-    <#include "/${parameters.templateDir}/simple/css.ftl" />
-    <#if parameters.title??>
-        title="${parameters.title}" <#t/>
+    <#include "/${attributes.templateDir}/simple/css.ftl" />
+    <#if attributes.title??>
+        title="${attributes.title}" <#t/>
     </#if>
-    <#include "/${parameters.templateDir}/${parameters.expandTheme}/scripting-events.ftl" /> <#t/>
-    <#include "/${parameters.templateDir}/${parameters.expandTheme}/common-attributes.ftl" /> <#t/>
-    <#include "/${parameters.templateDir}/${parameters.expandTheme}/dynamic-attributes.ftl" /> <#t/>
+    <#include "/${attributes.templateDir}/${attributes.expandTheme}/scripting-events.ftl" /> <#t/>
+    <#include "/${attributes.templateDir}/${attributes.expandTheme}/common-attributes.ftl" /> <#t/>
+    <#include "/${attributes.templateDir}/${attributes.expandTheme}/dynamic-attributes.ftl" /> <#t/>
 />
-<input type="hidden" id="__checkbox_${parameters.id}" name="__checkbox_${parameters.name}" <#rt/>
-    value="${parameters.fieldValue}" <#t/>
-    <#if parameters.disabled!false>
+<input type="hidden" id="__checkbox_${attributes.id}" name="__checkbox_${attributes.name}" <#rt/>
+    value="${attributes.fieldValue}" <#t/>
+    <#if attributes.disabled!false>
         disabled="disabled"<#rt/>
     </#if>
 />

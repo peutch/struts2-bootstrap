@@ -18,5 +18,5 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
-<#include "/${parameters.templateDir}/simple/submit.ftl" />
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/controlheader.ftl" />
+<#include "/${attributes.templateDir}/simple/submit.ftl" />

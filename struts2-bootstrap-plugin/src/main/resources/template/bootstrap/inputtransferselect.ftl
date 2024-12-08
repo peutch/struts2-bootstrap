@@ -18,129 +18,129 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/controlheader.ftl" />
 
 <#if !stack.findValue("#inputtransferselect_js_included")??><#t/>
-<@s.script src="${base}${parameters.staticContentPath}/inputtransferselect.js" encode='false' includeParams='none'/>
+<@s.script src="${base}${attributes.staticContentPath}/inputtransferselect.js" encode='false' includeParams='none'/>
     <#assign temporaryVariable = stack.setValue("#inputtransferselect_js_included", "true") /><#t/>
 </#if><#t/>
 <div class="mb-3 row">
     <div class="col-md-5">
 
-    <#if parameters.leftTitle??><#t/>
-        <label for="leftTitle">${parameters.leftTitle}</label><br/>
+    <#if attributes.leftTitle??><#t/>
+        <label for="leftTitle">${attributes.leftTitle}</label><br/>
     </#if><#t/>
 
 
         <input type="text"<#rt/>
-               name="${parameters.name!""}_input"<#rt/>
-        <#if parameters.disabled!false>
+               name="${attributes.name!""}_input"<#rt/>
+        <#if attributes.disabled!false>
                disabled="disabled"<#rt/>
         </#if>
-        <#if parameters.readonly!false>
+        <#if attributes.readonly!false>
                readonly="readonly"<#rt/>
         </#if>
-        <#if parameters.tabindex??>
-               tabindex="${parameters.tabindex}"<#rt/>
+        <#if attributes.tabindex??>
+               tabindex="${attributes.tabindex}"<#rt/>
         </#if>
-        <#if parameters.id??>
-               id="${parameters.id}_input"<#rt/>
+        <#if attributes.id??>
+               id="${attributes.id}_input"<#rt/>
         </#if>
-        <#if parameters.cssClass??>
-               class="form-control ${parameters.cssClass}"<#rt/>
+        <#if attributes.cssClass??>
+               class="form-control ${attributes.cssClass}"<#rt/>
         <#else>
                class="form-control"<#rt/>
         </#if>
-        <#if parameters.cssStyle??>
-               style="${parameters.cssStyle}"<#rt/>
+        <#if attributes.cssStyle??>
+               style="${attributes.cssStyle}"<#rt/>
         </#if>
-        <#if parameters.title??>
-               title="${parameters.title}"<#rt/>
+        <#if attributes.title??>
+               title="${attributes.title}"<#rt/>
         </#if>
-        <#include "/${parameters.templateDir}/${parameters.expandTheme}/scripting-events.ftl" />
-        <#include "/${parameters.templateDir}/${parameters.expandTheme}/common-attributes.ftl" />
+        <#include "/${attributes.templateDir}/${attributes.expandTheme}/scripting-events.ftl" />
+        <#include "/${attributes.templateDir}/${attributes.expandTheme}/common-attributes.ftl" />
                 />
     </div>
 
     <div class="col-md-2 text-center">
         <div class="btn-group-vertical transferselect-btn transferselect-btn-middle">
-        <#assign addLabel=parameters.addLabel!"Add" /><#t/>
+        <#assign addLabel=attributes.addLabel!"Add" /><#t/>
             <button type="button"
-            <#if parameters.buttonCssClass??><#t/>
-                    class="btn ${parameters.buttonCssClass}"
+            <#if attributes.buttonCssClass??><#t/>
+                    class="btn ${attributes.buttonCssClass}"
             <#else><#t/>
                     class="btn btn-outline-secondary"
             </#if><#t/>
-            <#if parameters.buttonCssStyle??><#t/>
-                    style="${parameters.buttonCssStyle}"
+            <#if attributes.buttonCssStyle??><#t/>
+                    style="${attributes.buttonCssStyle}"
             </#if><#t/>
                     title="${addLabel}"
-                    onclick="addOption(document.getElementById('${parameters.id}_input'), document.getElementById('${parameters.id}'))"
+                    onclick="addOption(document.getElementById('${attributes.id}_input'), document.getElementById('${attributes.id}'))"
                     ><#t/>
                 <span class="bi bi-plus-circle"></span>
             </button>
         <#t/>
-        <#assign removeLabel=parameters.removeLabel!"Remove" /><#t/>
+        <#assign removeLabel=attributes.removeLabel!"Remove" /><#t/>
             <button type="button"
-            <#if parameters.buttonCssClass??><#t/>
-                    class="btn ${parameters.buttonCssClass}"
+            <#if attributes.buttonCssClass??><#t/>
+                    class="btn ${attributes.buttonCssClass}"
             <#else><#t/>
                     class="btn btn-outline-secondary"
             </#if><#t/>
-            <#if parameters.buttonCssStyle??><#t/>
-                    style="${parameters.buttonCssStyle}"
+            <#if attributes.buttonCssStyle??><#t/>
+                    style="${attributes.buttonCssStyle}"
             </#if><#t/>
                     title="${removeLabel}"
-                    onclick="removeOptions(document.getElementById('${parameters.id}'))"
+                    onclick="removeOptions(document.getElementById('${attributes.id}'))"
                     ><#t/>
                 <span class="bi bi-dash-circle"></span>
             </button>
         <#t/>
-        <#assign removeAllLabel=parameters.removeAllLabel!"Remove all" /><#t/>
+        <#assign removeAllLabel=attributes.removeAllLabel!"Remove all" /><#t/>
             <button type="button"
-            <#if parameters.buttonCssClass??><#t/>
-                    class="btn ${parameters.buttonCssClass}"
+            <#if attributes.buttonCssClass??><#t/>
+                    class="btn ${attributes.buttonCssClass}"
             <#else><#t/>
                     class="btn btn-outline-secondary"
             </#if><#t/>
-            <#if parameters.buttonCssStyle??><#t/>
-                    style="${parameters.buttonCssStyle}"
+            <#if attributes.buttonCssStyle??><#t/>
+                    style="${attributes.buttonCssStyle}"
             </#if><#t/>
                     title="${removeAllLabel}"
-                    onclick="removeAllOptions(document.getElementById('${parameters.id}'))"
+                    onclick="removeAllOptions(document.getElementById('${attributes.id}'))"
                     ><#t/>
                 <span class="bi bi-dash-circle-fill"></span>
             </button>
         </div>
     </div>
     <div class="col-md-5">
-    <#if parameters.rightTitle??><#t/>
-        <label for="rightTitle">${parameters.rightTitle}</label><br/>
+    <#if attributes.rightTitle??><#t/>
+        <label for="rightTitle">${attributes.rightTitle}</label><br/>
     </#if><#t/>
-    <#include "/${parameters.templateDir}/${parameters.expandTheme}/simple/select.ftl" />
-    <#if parameters.allowUpDown!true>
+    <#include "/${attributes.templateDir}/${attributes.expandTheme}/simple/select.ftl" />
+    <#if attributes.allowUpDown!true>
         <div class="text-center">
             <div class="btn-group transferselect-btn transferselect-btn-bottom">
                 <button type="button" class="btn btn-outline-secondary"
-                    <#if parameters.downLabel??>
-                        title="${parameters.downLabel}"
+                    <#if attributes.downLabel??>
+                        title="${attributes.downLabel}"
                     </#if>
-                    <#if parameters.headerKey??>
-                        onclick="moveOptionDown(document.getElementById('${parameters.id}'), 'key', '${parameters.headerKey}');"
+                    <#if attributes.headerKey??>
+                        onclick="moveOptionDown(document.getElementById('${attributes.id}'), 'key', '${attributes.headerKey}');"
                     <#else>
-                        onclick="moveOptionDown(document.getElementById('${parameters.id}'), 'key', '');"
+                        onclick="moveOptionDown(document.getElementById('${attributes.id}'), 'key', '');"
                     </#if>
                         ><#t/>
                     <span class="bi bi-arrow-down-circle"></span>
                 </button>
                 <button type="button" class="btn btn-outline-secondary"
-                    <#if parameters.downLabel??>
-                        title="${parameters.upLabel}"
+                    <#if attributes.downLabel??>
+                        title="${attributes.upLabel}"
                     </#if>
-                    <#if parameters.headerKey??>
-                        onclick="moveOptionUp(document.getElementById('${parameters.id}'), 'key', '${parameters.headerKey}');"
+                    <#if attributes.headerKey??>
+                        onclick="moveOptionUp(document.getElementById('${attributes.id}'), 'key', '${attributes.headerKey}');"
                     <#else>
-                        onclick="moveOptionUp(document.getElementById('${parameters.id}'), 'key', '');"
+                        onclick="moveOptionUp(document.getElementById('${attributes.id}'), 'key', '');"
                     </#if>
                         ><#t/>
                     <span class="bi bi-arrow-up-circle"></span>
@@ -150,4 +150,4 @@
     </#if>
     </div>
 </div>
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" /><#nt/>
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/controlfooter.ftl" /><#nt/>

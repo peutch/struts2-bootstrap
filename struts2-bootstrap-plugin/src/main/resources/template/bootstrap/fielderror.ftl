@@ -34,21 +34,21 @@
                         <#assign doneStartUlTag=true><#t/>
                     </#if><#t/>
                 <div
-                    <#if parameters.id?has_content>
-                            id="${parameters.id}"<#rt/>
+                    <#if attributes.id?has_content>
+                            id="${attributes.id}"<#rt/>
                     </#if>
-                    <#if parameters.cssClass??>
-                            class="alert alert-danger ${parameters.cssClass}"<#rt/>
+                    <#if attributes.cssClass??>
+                            class="alert alert-danger ${attributes.cssClass}"<#rt/>
                     <#else>
                             class="alert alert-danger actionError"<#rt/>
                     </#if>
-                    <#if parameters.cssStyle??>
-                            style="margin${parameters.cssStyle}"<#rt/>
+                    <#if attributes.cssStyle??>
+                            style="margin${attributes.cssStyle}"<#rt/>
                     </#if>
                         >
                     <#list eValue as eEachValue><#t/>
                         <#if eEachValue?has_content>
-                            <div><#if parameters.escape>${eEachValue!}<#else>${eEachValue!}</#if></div>
+                            <div><#if attributes.escape>${eEachValue!}<#else>${eEachValue!}</#if></div>
                         </#if>
                     </#list>
                 </div>
@@ -61,23 +61,23 @@
     <#else><#t/>
         <#if (eKeysSize > 0)><#t/>
         <div
-            <#if parameters.id?has_content>
-                    id="${parameters.id}"<#rt/>
+            <#if attributes.id?has_content>
+                    id="${attributes.id}"<#rt/>
             </#if>
-            <#if parameters.cssClass??>
-                    class="alert alert-danger ${parameters.cssClass}"<#rt/>
+            <#if attributes.cssClass??>
+                    class="alert alert-danger ${attributes.cssClass}"<#rt/>
             <#else>
                     class="alert alert-danger actionError"<#rt/>
             </#if>
-            <#if parameters.cssStyle??>
-                    style="margin${parameters.cssStyle}"<#rt/>
+            <#if attributes.cssStyle??>
+                    style="margin${attributes.cssStyle}"<#rt/>
             </#if>
                 >
             <#list eKeys as eKey><#t/>
                 <#assign eValue = fieldErrors.get(eKey?j_string)><#t/>
                 <#list eValue as eEachValue><#t/>
                     <#if eEachValue?has_content>
-                        <div class="mb-0"><#if parameters.escape>${eEachValue!}<#else>${eEachValue!}</#if></div>
+                        <div class="mb-0"><#if attributes.escape>${eEachValue!}<#else>${eEachValue!}</#if></div>
                     </#if>
                 </#list>
             </#list><#t/>

@@ -20,128 +20,128 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/simple/select.ftl" />
+<#include "/${attributes.templateDir}/simple/select.ftl" />
 <#assign startCount = 0/>
-<#if parameters.headerKey?? && parameters.headerValue??>
+<#if attributes.headerKey?? && attributes.headerValue??>
     <#assign startCount = startCount + 1/>
 </#if>
-<#if parameters.emptyOption??>
+<#if attributes.emptyOption??>
     <#assign startCount = startCount + 1/>
 </#if>
 
 <br/>
 <select<#rt/>
- name="${parameters.doubleName!""}"<#rt/>
-<#if parameters.disabled!false>
+ name="${attributes.doubleName!""}"<#rt/>
+<#if attributes.disabled!false>
  disabled="disabled"<#rt/>
 </#if>
-<#if parameters.doubleTabindex??>
- tabindex="${parameters.doubleTabindex}"<#rt/>
+<#if attributes.doubleTabindex??>
+ tabindex="${attributes.doubleTabindex}"<#rt/>
 </#if>
-<#if parameters.doubleId??>
- id="${parameters.doubleId}"<#rt/>
+<#if attributes.doubleId??>
+ id="${attributes.doubleId}"<#rt/>
 </#if>
-<#if parameters.doubleCss??>
- class="form-control ${parameters.doubleCss}"<#rt/>
+<#if attributes.doubleCss??>
+ class="form-control ${attributes.doubleCss}"<#rt/>
 <#else>
  class="form-control"<#rt/>
 </#if>
-<#if parameters.doubleStyle??>
- style="${parameters.doubleStyle}"<#rt/>
+<#if attributes.doubleStyle??>
+ style="${attributes.doubleStyle}"<#rt/>
 </#if>
-<#if parameters.title??>
- title="${parameters.title}"<#rt/>
+<#if attributes.title??>
+ title="${attributes.title}"<#rt/>
 </#if>
-<#if parameters.multiple!false>
+<#if attributes.multiple!false>
  multiple="multiple"<#rt/>
 </#if>
-<#if parameters.get("doubleSize")??>
- size="${parameters.get("doubleSize")}"<#rt/>
+<#if attributes.get("doubleSize")??>
+ size="${attributes.get("doubleSize")}"<#rt/>
 </#if>
-<#if parameters.doubleMultiple!false>
+<#if attributes.doubleMultiple!false>
  multiple="multiple"<#rt/>
 </#if>
-<#if parameters.doubleDisabled!false>
+<#if attributes.doubleDisabled!false>
  disabled="disabled"<#rt/>
 </#if>
 >
 </select>
-<#if parameters.doubleMultiple!false>
-<input type="hidden" id="__multiselect_${parameters.doubleId}"<#rt/>
- name="__multiselect_${parameters.doubleName!""}" value=""<#rt/>
-<#if parameters.doubleDisabled!false>
+<#if attributes.doubleMultiple!false>
+<input type="hidden" id="__multiselect_${attributes.doubleId}"<#rt/>
+ name="__multiselect_${attributes.doubleName!""}" value=""<#rt/>
+<#if attributes.doubleDisabled!false>
  disabled="disabled"<#rt/>
 </#if>
 />
 </#if>
 <@s.script>
     <#assign itemCount = startCount/>
-    var ${parameters.id}Group = new Array(${parameters.listSize} + ${startCount});
-    for (i = 0; i < (${parameters.listSize} + ${startCount}); i++)
-        ${parameters.id}Group[i] = [];
+    var ${attributes.id}Group = new Array(${attributes.listSize} + ${startCount});
+    for (i = 0; i < (${attributes.listSize} + ${startCount}); i++)
+        ${attributes.id}Group[i] = [];
 
-    <@s.iterator value="parameters.list">
-        <#if parameters.listKey??>
-            <#assign itemKey = stack.findValue(parameters.listKey)/>
+    <@s.iterator value="attributes.list">
+        <#if attributes.listKey??>
+            <#assign itemKey = stack.findValue(attributes.listKey)/>
         <#else>
             <#assign itemKey = stack.findValue('top')/>
         </#if>
-        <#if parameters.listValue??>
-            <#assign itemValue = stack.findString(parameters.listValue)/>
+        <#if attributes.listValue??>
+            <#assign itemValue = stack.findString(attributes.listValue)/>
         <#else>
             <#assign itemValue = stack.findString('top')/>
         </#if>
         <#assign doubleItemCount = 0/>
-        <#if parameters.doubleHeaderKey?? && parameters.doubleHeaderValue??>
-        ${parameters.id}Group[${itemCount}][${doubleItemCount}] = new Option("${doubleHeaderValue?js_string}", "${doubleHeaderKey?js_string}");
+        <#if attributes.doubleHeaderKey?? && attributes.doubleHeaderValue??>
+        ${attributes.id}Group[${itemCount}][${doubleItemCount}] = new Option("${doubleHeaderValue?js_string}", "${doubleHeaderKey?js_string}");
             <#assign doubleItemCount = doubleItemCount + 1/>
         </#if>
-        <#if parameters.doubleEmptyOption??>
-        ${parameters.id}Group[${itemCount}][${doubleItemCount}] = new Option("", "");
+        <#if attributes.doubleEmptyOption??>
+        ${attributes.id}Group[${itemCount}][${doubleItemCount}] = new Option("", "");
             <#assign doubleItemCount = doubleItemCount + 1/>
         </#if>
-        <@s.iterator value="${parameters.doubleList}">
-            <#if parameters.doubleListKey??>
-                <#assign doubleItemKey = stack.findValue(parameters.doubleListKey)/>
+        <@s.iterator value="${attributes.doubleList}">
+            <#if attributes.doubleListKey??>
+                <#assign doubleItemKey = stack.findValue(attributes.doubleListKey)/>
             <#else>
                 <#assign doubleItemKey = stack.findValue('top')/>
             </#if>
             <#assign doubleItemKeyStr = doubleItemKey.toString() />
-            <#if parameters.doubleListValue??>
-                <#assign doubleItemValue = stack.findString(parameters.doubleListValue)/>
+            <#if attributes.doubleListValue??>
+                <#assign doubleItemValue = stack.findString(attributes.doubleListValue)/>
             <#else>
                 <#assign doubleItemValue = stack.findString('top')/>
             </#if>
-            <#if parameters.doubleListCssClass??>
-                <#if stack.findString(parameters.doubleListCssClass)??>
-                    <#assign itemDoubleCssClass= stack.findString(parameters.doubleListCssClass)/>
+            <#if attributes.doubleListCssClass??>
+                <#if stack.findString(attributes.doubleListCssClass)??>
+                    <#assign itemDoubleCssClass= stack.findString(attributes.doubleListCssClass)/>
                 <#else>
                     <#assign itemDoubleCssClass = ''/>
                 </#if>
             </#if>
-            <#if parameters.doubleListCssStyle??>
-                <#if stack.findString(parameters.doubleListCssStyle)??>
-                    <#assign itemDoubleCssStyle= stack.findString(parameters.doubleListCssStyle)/>
+            <#if attributes.doubleListCssStyle??>
+                <#if stack.findString(attributes.doubleListCssStyle)??>
+                    <#assign itemDoubleCssStyle= stack.findString(attributes.doubleListCssStyle)/>
                 <#else>
                     <#assign itemDoubleCssStyle = ''/>
                 </#if>
             </#if>
-            <#if parameters.doubleListTitle??>
-                <#if stack.findString(parameters.doubleListTitle)??>
-                    <#assign itemDoubleTitle= stack.findString(parameters.doubleListTitle)/>
+            <#if attributes.doubleListTitle??>
+                <#if stack.findString(attributes.doubleListTitle)??>
+                    <#assign itemDoubleTitle= stack.findString(attributes.doubleListTitle)/>
                 <#else>
                     <#assign itemDoubleTitle = ''/>
                 </#if>
             </#if>
-        ${parameters.id}Group[${itemCount}][${doubleItemCount}] = new Option("${doubleItemValue?js_string}", "${doubleItemKeyStr?js_string}");
+        ${attributes.id}Group[${itemCount}][${doubleItemCount}] = new Option("${doubleItemValue?js_string}", "${doubleItemKeyStr?js_string}");
             <#if itemDoubleCssClass?has_content>
-            ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("class", "${itemDoubleCssClass}");
+            ${attributes.id}Group[${itemCount}][${doubleItemCount}].setAttribute("class", "${itemDoubleCssClass}");
             </#if>
             <#if itemDoubleCssStyle?has_content>
-            ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("style", "${itemDoubleCssStyle}");
+            ${attributes.id}Group[${itemCount}][${doubleItemCount}].setAttribute("style", "${itemDoubleCssStyle}");
             </#if>
             <#if itemDoubleTitle?has_content>
-            ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("title", "${itemDoubleTitle}");
+            ${attributes.id}Group[${itemCount}][${doubleItemCount}].setAttribute("title", "${itemDoubleTitle}");
             </#if>
 
             <#assign doubleItemCount = doubleItemCount + 1/>
@@ -149,52 +149,52 @@
         <#assign itemCount = itemCount + 1/>
     </@s.iterator>
 
-    var ${parameters.id}Temp = document.${parameters.formName}.${parameters.doubleId};
+    var ${attributes.id}Temp = document.${attributes.formName}.${attributes.doubleId};
     <#assign itemCount = startCount/>
     <#assign redirectTo = 0/>
-    <@s.iterator value="parameters.list">
-        <#if parameters.listKey??>
-            <#assign itemKey = stack.findValue(parameters.listKey)/>
+    <@s.iterator value="attributes.list">
+        <#if attributes.listKey??>
+            <#assign itemKey = stack.findValue(attributes.listKey)/>
         <#else>
             <#assign itemKey = stack.findValue('top')/>
         </#if>
-        <#if tag.contains(parameters.nameValue, itemKey)>
+        <#if tag.contains(attributes.nameValue, itemKey)>
             <#assign redirectTo = itemCount/>
         </#if>
         <#assign itemCount = itemCount + 1/>
     </@s.iterator>
-    ${parameters.id}Redirect(${redirectTo});
-    function ${parameters.id}Redirect(x) {
+    ${attributes.id}Redirect(${redirectTo});
+    function ${attributes.id}Redirect(x) {
         var selected = false;
-        for (m = ${parameters.id}Temp.options.length - 1; m >= 0; m--) {
-            ${parameters.id}Temp.remove(m);
+        for (m = ${attributes.id}Temp.options.length - 1; m >= 0; m--) {
+            ${attributes.id}Temp.remove(m);
         }
 
-        for (i = 0; i < ${parameters.id}Group[x].length; i++) {
-            ${parameters.id}Temp.options[i] = new Option(${parameters.id}Group[x][i].text, ${parameters.id}Group[x][i].value);
-        <#if parameters.doubleNameValue??>
-            <#if parameters.doubleMultiple??>
-                for (j = 0; j < ${parameters.doubleNameValue}.
+        for (i = 0; i < ${attributes.id}Group[x].length; i++) {
+            ${attributes.id}Temp.options[i] = new Option(${attributes.id}Group[x][i].text, ${attributes.id}Group[x][i].value);
+        <#if attributes.doubleNameValue??>
+            <#if attributes.doubleMultiple??>
+                for (j = 0; j < ${attributes.doubleNameValue}.
                 length;
                 j++
             )
                 {
-                    if (${parameters.id}Temp.options[i].value === ${parameters.doubleNameValue?js_string}[j]) {
-                        ${parameters.id}Temp.options[i].selected = true;
+                    if (${attributes.id}Temp.options[i].value === ${attributes.doubleNameValue?js_string}[j]) {
+                        ${attributes.id}Temp.options[i].selected = true;
                         selected = true;
                     }
                 }
             <#else>
-                if (${parameters.id}Temp.options[i].value === '${parameters.doubleNameValue?js_string}') {
-                    ${parameters.id}Temp.options[i].selected = true;
+                if (${attributes.id}Temp.options[i].value === '${attributes.doubleNameValue?js_string}') {
+                    ${attributes.id}Temp.options[i].selected = true;
                     selected = true;
                 }
             </#if>
         </#if>
         }
 
-        if ((${parameters.id}Temp.options.length > 0) && (!selected)) {
-            ${parameters.id}Temp.options[0].selected = true;
+        if ((${attributes.id}Temp.options.length > 0) && (!selected)) {
+            ${attributes.id}Temp.options[0].selected = true;
         }
     }
 </@s.script>
