@@ -27,6 +27,7 @@
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="false"/>
+    <constant name="struts.allowlist.packageNames" value="com.jgeppert.struts2.bootstrap,com.jgeppert.struts2.jquery"/>
     <constant name="struts.convention.action.packages" value="com.jgeppert.struts2.bootstrap.showcase"/>
     <constant name="struts.custom.i18n.resources" value="messages"/>
 
