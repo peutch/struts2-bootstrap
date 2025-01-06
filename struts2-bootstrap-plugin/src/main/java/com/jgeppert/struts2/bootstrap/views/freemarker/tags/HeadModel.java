@@ -19,14 +19,14 @@
 
 package com.jgeppert.struts2.bootstrap.views.freemarker.tags;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.components.Component;
+import org.apache.struts2.util.ValueStack;
 import org.apache.struts2.views.freemarker.tags.TagModel;
 
 import com.jgeppert.struts2.bootstrap.components.Head;
-import com.opensymphony.xwork2.util.ValueStack;
 
 /**
  * @see Head

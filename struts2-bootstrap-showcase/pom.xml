@@ -13,7 +13,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <struts2-jquery-plugin.version>5.0.7</struts2-jquery-plugin.version>
+        <struts2-jquery-plugin.version>6.0.0-SNAPSHOT</struts2-jquery-plugin.version>
         <jetty-maven-plugin.version>11.0.24</jetty-maven-plugin.version>
     </properties>
 
@@ -38,14 +38,11 @@
                     <version>${jetty-maven-plugin.version}</version>
                     <configuration>
                         <stopPort>8999</stopPort>
-                        <scanIntervalSeconds>10</scanIntervalSeconds>
-                        <webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>
+                        <scan>10</scan>
                         <webApp>
                             <contextPath>/${project.artifactId}</contextPath>
-                        </webApp>
-                        <webAppConfig>
                             <descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
-                        </webAppConfig>
+                        </webApp>
                     </configuration>
                 </plugin>
             </plugins>

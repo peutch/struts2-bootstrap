@@ -19,19 +19,19 @@
 
 package com.jgeppert.struts2.bootstrap.views.velocity.components;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.components.Component;
 
 import com.jgeppert.struts2.bootstrap.components.Head;
-import com.opensymphony.xwork2.util.ValueStack;
+import org.apache.struts2.util.ValueStack;
 
 /**
- * 
+ *
  * @see Head
  * @author <a href="https://www.jgeppert.com">Johannes Geppert</a>
- * 
+ *
  */
 public class HeadDirective extends BootstrapAbstractDirective {
   protected Component getBean(ValueStack stack, HttpServletRequest req, HttpServletResponse res)

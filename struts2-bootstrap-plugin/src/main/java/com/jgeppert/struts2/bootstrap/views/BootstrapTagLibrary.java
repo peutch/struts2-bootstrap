@@ -22,16 +22,15 @@ package com.jgeppert.struts2.bootstrap.views;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import com.jgeppert.struts2.bootstrap.views.freemarker.tags.BootstrapModels;
 import com.jgeppert.struts2.bootstrap.views.velocity.components.HeadDirective;
 
+import org.apache.struts2.util.ValueStack;
 import org.apache.struts2.views.TagLibraryDirectiveProvider;
 import org.apache.struts2.views.TagLibraryModelProvider;
-
-import com.opensymphony.xwork2.util.ValueStack;
 
 /**
  * @author <a href="https://www.jgeppert.com">Johannes Geppert</a>

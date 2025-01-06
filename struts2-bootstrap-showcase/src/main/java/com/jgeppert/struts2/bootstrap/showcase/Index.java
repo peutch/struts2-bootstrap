@@ -19,9 +19,8 @@
 
 package com.jgeppert.struts2.bootstrap.showcase;
 
+import org.apache.struts2.ActionSupport;
 import org.apache.struts2.convention.annotation.ParentPackage;
-
-import com.opensymphony.xwork2.ActionSupport;
 
 @ParentPackage(value = "showcase")
 public class Index extends ActionSupport {

@@ -19,7 +19,7 @@
 
 package com.jgeppert.struts2.bootstrap.showcase;
 
-import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ActionSupport;
 import org.apache.struts2.convention.annotation.ParentPackage;
 
 @ParentPackage(value = "showcase")
