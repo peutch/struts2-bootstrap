@@ -80,6 +80,7 @@
         <struts2.version>7.0.0</struts2.version>
         <log4j2.version>2.24.3</log4j2.version>
         <velocity.version>1.7</velocity.version>
+        <freemarker.version>2.3.34</freemarker.version>
     </properties>
 
     <modules>
@@ -130,9 +131,6 @@
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <forceJavacCompilerUse>true</forceJavacCompilerUse>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
@@ -219,11 +217,6 @@
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>jakarta.servlet.jsp</groupId>
-            <artifactId>jakarta.servlet.jsp-api</artifactId>
         </dependency>
     </dependencies>
 
