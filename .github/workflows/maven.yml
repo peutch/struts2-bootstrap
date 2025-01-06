@@ -7,11 +7,13 @@ on:
   push:
     branches:
       - master
+      - release/6.0.x
       - release/5.0.x
       - release/4.0.x
   pull_request:
     branches:
       - master
+      - release/6.0.x
       - release/5.0.x
       - release/4.0.x
 
@@ -42,7 +44,7 @@ jobs:
     - name: Build
       run: mvn -B install
     - name: Deploy SNAPSHOT
-      if: github.ref == 'refs/heads/release/5.0.x'
+      if: github.ref == 'refs/heads/release/6.0.x' || github.ref == 'refs/heads/release/5.0.x'
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
