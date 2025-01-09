@@ -16,21 +16,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 package com.jgeppert.struts2.bootstrap.views.velocity.components;
 
 import org.apache.struts2.views.velocity.components.AbstractDirective;
 
 /**
- * 
- * Overwrite name prefix
- * 
+ * The `BootstrapAbstractDirective` class provides the base for all Bootstrap
+ * directives in the Velocity template engine. It overrides the name prefix
+ * for the directives to use "sb" as the prefix.
+ *
  * @author <a href="https://www.jgeppert.com">Johannes Geppert</a>
- * 
+ * @see org.apache.struts2.views.velocity.components.AbstractDirective
  */
 public abstract class BootstrapAbstractDirective extends AbstractDirective {
-  public String getName()
-  {
-    return "sb" + getBeanName();
-  }
+
+    /**
+     * Returns the name of the directive with the "sb" prefix.
+     *
+     * @return the name of the directive
+     */
+    @Override
+    public String getName() {
+        return "sb" + getBeanName();
+    }
+
 }

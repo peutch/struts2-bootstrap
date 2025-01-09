@@ -19,11 +19,15 @@
 
 package com.jgeppert.struts2.bootstrap.showcase;
 
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.validator.annotations.*;
+import org.apache.struts2.ActionSupport;
 import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.validator.annotations.ExpressionValidator;
+import org.apache.struts2.validator.annotations.FieldExpressionValidator;
+import org.apache.struts2.validator.annotations.RequiredStringValidator;
+import org.apache.struts2.validator.annotations.Validations;
+import org.apache.struts2.validator.annotations.ValidatorType;
 
 @ParentPackage(value = "showcase")
 @InterceptorRef("jsonValidationWorkflowStack")

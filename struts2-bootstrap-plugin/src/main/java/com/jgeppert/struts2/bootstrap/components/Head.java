@@ -16,16 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 package com.jgeppert.struts2.bootstrap.components;
 
-import com.opensymphony.xwork2.util.ValueStack;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.apache.struts2.util.ValueStack;
 import org.apache.struts2.views.annotations.StrutsTag;
 import org.apache.struts2.views.annotations.StrutsTagAttribute;
 import org.apache.struts2.views.annotations.StrutsTagSkipInheritance;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * <!-- START SNIPPET: notice -->
@@ -66,14 +64,29 @@ public class Head extends org.apache.struts2.components.Head {
     protected String includeStyles;
     protected String includeScripts;
 
+    /**
+     * Constructor for Head.
+     *
+     * @param stack    the value stack
+     * @param request  the HTTP request
+     * @param response the HTTP response
+     */
     public Head(ValueStack stack, HttpServletRequest request, HttpServletResponse response) {
         super(stack, request, response);
     }
 
+    /**
+     * Returns the default template name.
+     *
+     * @return the default template name
+     */
     protected String getDefaultTemplate() {
         return TEMPLATE;
     }
 
+    /**
+     * Evaluates the parameters for the tag.
+     */
     public void evaluateParams() {
         super.evaluateParams();
         if (this.compressed != null) addParameter("compressed", findValue(this.compressed, Boolean.class));
@@ -81,27 +94,52 @@ public class Head extends org.apache.struts2.components.Head {
         if (this.includeScripts != null) addParameter("includeScripts", findValue(this.includeScripts, Boolean.class));
     }
 
+    /**
+     * Sets the theme for the tag.
+     *
+     * @param theme the theme to set
+     */
     @Override
     @StrutsTagSkipInheritance
     public void setTheme(String theme) {
         super.setTheme(theme);
     }
 
+    /**
+     * Gets the theme for the tag.
+     *
+     * @return the theme
+     */
     @Override
     public String getTheme() {
         return "bootstrap";
     }
 
+    /**
+     * Sets whether to use the compressed version of Bootstrap resources.
+     *
+     * @param compressed the compressed flag
+     */
     @StrutsTagAttribute(description = "use compressed version of bootstrap resources", defaultValue = "true", type = "Boolean")
     public void setCompressed(String compressed) {
         this.compressed = compressed;
     }
 
+    /**
+     * Sets whether to include Bootstrap responsive styles.
+     *
+     * @param includeStyles the includeStyles flag
+     */
     @StrutsTagAttribute(description = "include bootstrap responsive styles", defaultValue = "true", type = "Boolean")
     public void setIncludeStyles(String includeStyles) {
         this.includeStyles = includeStyles;
     }
 
+    /**
+     * Sets whether to include Bootstrap scripts.
+     *
+     * @param includeScripts the includeScripts flag
+     */
     @StrutsTagAttribute(description = "include bootstrap scripts", defaultValue = "true", type = "Boolean")
     public void setIncludeScripts(String includeScripts) {
         this.includeScripts = includeScripts;

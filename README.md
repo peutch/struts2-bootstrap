@@ -15,12 +15,13 @@ A Plugin for simple Bootstrap CSS Framework integration into Struts2.
 Copy the struts2-bootstrap-plugin.jar into your WEB-INF/lib path.
 
 ### Versions and compatibility
-| `struts2-bootstrap` version | `struts2` version          |
-|-----------------------------|----------------------------|
-| `5.0.6`                     | version >= `6.7.0` & JDK 8 |
-| `5.0.5`                     | version >= `6.6.0` & JDK 7 |
-| `5.0.2`                     | version >= `6.1` & JDK 7   |
-| `5.0.0`                     | version >= `6.0` & JDK 7   |
+| `struts2-bootstrap` version | `struts2` version  | `Java` version |
+|-----------------------------|--------------------|----------------|
+| `6.0.0`                     | version >= `7.0.0` | Java 17        |
+| `5.0.6`                     | version >= `6.7.0` | Java 8         |
+| `5.0.5`                     | version >= `6.6.0` | Java 7         |
+| `5.0.2`                     | version >= `6.1`   | Java 7         |
+| `5.0.0`                     | version >= `6.0`   | Java 7         |
 
 ### Maven
 
@@ -30,7 +31,7 @@ Copy the struts2-bootstrap-plugin.jar into your WEB-INF/lib path.
     <dependency>
         <groupId>com.jgeppert.struts2.bootstrap</groupId>
         <artifactId>struts2-bootstrap-plugin</artifactId>
-        <version>5.1.0</version>
+        <version>6.0.0</version>
     </dependency>
     ...
 </dependencies>

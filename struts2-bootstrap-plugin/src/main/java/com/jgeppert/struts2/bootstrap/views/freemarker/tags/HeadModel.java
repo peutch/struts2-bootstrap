@@ -16,29 +16,46 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 package com.jgeppert.struts2.bootstrap.views.freemarker.tags;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.jgeppert.struts2.bootstrap.components.Head;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.apache.struts2.components.Component;
+import org.apache.struts2.util.ValueStack;
 import org.apache.struts2.views.freemarker.tags.TagModel;
 
-import com.jgeppert.struts2.bootstrap.components.Head;
-import com.opensymphony.xwork2.util.ValueStack;
-
 /**
- * @see Head
+ * The `HeadModel` class provides the model for the `Head` component in the
+ * Bootstrap plugin. It initializes and returns the `Head` component for
+ * rendering the head section of an HTML document with Bootstrap resources.
+ *
  * @author <a href="https://www.jgeppert.com">Johannes Geppert</a>
+ * @see Head
+ * @see org.apache.struts2.util.ValueStack
+ * @see jakarta.servlet.http.HttpServletRequest
+ * @see jakarta.servlet.http.HttpServletResponse
  */
 public class HeadModel extends TagModel {
-  public HeadModel(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
-    super(stack, req, res);
-  }
 
-  protected Component getBean()
-  {
-    return new Head(stack, req, res);
-  }
+    /**
+     * Constructor for `HeadModel`.
+     *
+     * @param stack the value stack
+     * @param req   the HTTP request
+     * @param res   the HTTP response
+     */
+    public HeadModel(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
+        super(stack, req, res);
+    }
+
+    /**
+     * Returns the `Head` component for rendering the head section of an HTML document.
+     *
+     * @return the `Head` component
+     */
+    protected Component getBean() {
+        return new Head(stack, req, res);
+    }
+
 }

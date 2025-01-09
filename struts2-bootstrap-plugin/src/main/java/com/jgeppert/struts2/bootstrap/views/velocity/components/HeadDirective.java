@@ -16,31 +16,46 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 package com.jgeppert.struts2.bootstrap.views.velocity.components;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.struts2.components.Component;
-
 import com.jgeppert.struts2.bootstrap.components.Head;
-import com.opensymphony.xwork2.util.ValueStack;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.apache.struts2.components.Component;
+import org.apache.struts2.util.ValueStack;
 
 /**
- * 
- * @see Head
+ * The `HeadDirective` class provides the Velocity directive for the `Head` component in the
+ * Bootstrap plugin. It initializes and returns the `Head` component for
+ * rendering the head section of an HTML document with Bootstrap resources.
+ *
  * @author <a href="https://www.jgeppert.com">Johannes Geppert</a>
- * 
+ * @see Head
+ * @see org.apache.struts2.util.ValueStack
+ * @see jakarta.servlet.http.HttpServletRequest
+ * @see jakarta.servlet.http.HttpServletResponse
  */
 public class HeadDirective extends BootstrapAbstractDirective {
-  protected Component getBean(ValueStack stack, HttpServletRequest req, HttpServletResponse res)
-  {
-    return new Head(stack, req, res);
-  }
 
-  public String getBeanName()
-  {
-    return "head";
-  }
+    /**
+     * Returns the `Head` component for rendering the head section of an HTML document.
+     *
+     * @param stack the value stack
+     * @param req   the HTTP request
+     * @param res   the HTTP response
+     * @return the `Head` component
+     */
+    protected Component getBean(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
+        return new Head(stack, req, res);
+    }
+
+    /**
+     * Returns the name of the directive with the "head" prefix.
+     *
+     * @return the name of the directive
+     */
+    public String getBeanName() {
+        return "head";
+    }
+
 }
