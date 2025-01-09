@@ -4,8 +4,7 @@
     "config:base"
   ],
   "baseBranches": [
-    "release/5.0.x",
-    "release/4.0.x"
+    "release/6.0.x"
   ],
   "packageRules": [
     {
