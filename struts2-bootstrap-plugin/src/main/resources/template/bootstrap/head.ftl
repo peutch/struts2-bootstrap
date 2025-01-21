@@ -22,7 +22,7 @@
 <#if attributes.compressed!true>
     <#assign jsFile="bootstrap.bundle.min.js"><#rt/>
     <#assign cssFile="bootstrap.min.css"><#rt/>
-    <#assign cssIconsFile="bootstrap-icons.css"><#rt/>
+    <#assign cssIconsFile="bootstrap-icons.min.css"><#rt/>
     <#assign validationFile="validation.min.js"><#rt/>
 <#else>
     <#assign jsFile="bootstrap.bundle.js"><#rt/>
