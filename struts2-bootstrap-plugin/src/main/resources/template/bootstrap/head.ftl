@@ -31,14 +31,14 @@
     <#assign validationFile="validation.js"><#rt/>
 </#if>
 <#if attributes.includeScripts!true>
-<@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
+<@s.script src="${base}/webjars/bootstrap/${bootstrap.version}/dist/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if attributes.includeScriptsValidation!true>
 <@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if attributes.includeStyles!true>
 <@s.link id="bootstrap_styles" rel="stylesheet"
-    href="${base}${attributes.staticContentPath}/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+    href="${base}/webjars/bootstrap/${bootstrap.version}/dist/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 <@s.link id="bootstrap_styles_icons" rel="stylesheet"
-    href="${base}${attributes.staticContentPath}/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+    href="${base}/webjars/bootstrap-icons/${bootstrap-icons.version}/font/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 </#if>
